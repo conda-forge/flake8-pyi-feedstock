@@ -1,18 +1,18 @@
 {% set name = "flake8-pyi" %}
-{% set version = "19.3.0" %}
+{% set version = "20.5.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 3646134dcc5269d3fd017624961de83cc0a0404f620233885ad86faf64265a11
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: f3db4d6feaec5343741feb07c75ab4f00be742f71ec2cad82d89a33b9326f8fe
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -30,11 +30,11 @@ test:
     - pyi
 
 about:
-  home: "https://github.com/ambv/flake8-pyi"
+  home: https://github.com/ambv/flake8-pyi
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "A plugin for flake8 to enable linting .pyi files."
+  summary: A plugin for flake8 to enable linting .pyi files.
 
 extra:
   recipe-maintainers:
