@@ -1,5 +1,5 @@
 {% set name = "flake8-pyi" %}
-{% set version = "22.5.1" %}
+{% set version = "22.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 52152ae25efbd6329c6426a3b29a9073a696ba744502fb3e48581a47426ad4c8
+  sha256: f610d80ebebc33ed118b08ec36a12067b36cf7578c49b7cad577b2b965738595
 
 build:
   number: 0
