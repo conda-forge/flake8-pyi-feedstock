@@ -1,11 +1,11 @@
-About flake8-pyi
-================
+About flake8-pyi-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/flake8-pyi-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ambv/flake8-pyi
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/flake8-pyi-feedstock/blob/main/LICENSE.txt)
 
 Summary: A plugin for flake8 to enable linting .pyi files.
 
