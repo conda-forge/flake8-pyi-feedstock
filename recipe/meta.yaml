@@ -22,7 +22,7 @@ requirements:
   run:
     - python
     - flake8 >=3.2.1,<7
-    - ast-decompiler >= 0.7.0,<1.0  # [py<39]
+    - ast-decompiler >=0.7.0,<1.0  # [py<39]
     - pyflakes >=2.1.1
 
 test:
