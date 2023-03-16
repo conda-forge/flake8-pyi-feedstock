@@ -1,28 +1,31 @@
 {% set name = "flake8-pyi" %}
-{% set version = "22.11.0" %}
+{% set version = "23.3.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ded2e4d947f0605abe9095ae3d38b01b7880b112bc3da0b4f888cd4a717c7acd
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 59e030e4412e78a8a16cc5bbb9e17d4f41e640fc8e230f09144b362a07b7c41d
 
 build:
   number: 0
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
+  build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    - python >=3.6
+    # - python >=3.7
+    - python
     - pip
-    - setuptools
+    - hatchling
   run:
-    - python >=3.6
-    - attrs
-    - flake8 >=3.2.1
+    - python
+    - flake8 >=3.2.1,<7
+    - ast-decompiler >=0.7.0,<1.0  # [py<39]
     - pyflakes >=2.1.1
 
 test:
