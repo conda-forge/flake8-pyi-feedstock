@@ -18,17 +18,22 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
-    # - python >=3.7
+    # - python >=3.8
     - python
     - pip
     - hatchling
+    - hatch-vcs
   run:
     - python
-    - flake8 >=3.2.1,<7
+    - flake8 >=6,<7
     - ast-decompiler >=0.7.0,<1.0  # [py<39]
     - pyflakes >=2.1.1
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - pyi
 
